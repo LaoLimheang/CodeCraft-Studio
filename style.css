@@ -174,32 +174,38 @@ body{
     justify-content: center;
     align-items: center;
 }
-.slider-container:hover .slider {
-        transform: translateX(-400px);
-    }
-    .slider {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: calc(400px * 3); /* Adjust width based on the number of slides */
-    }
-    
-    .slide {
-        width: 400px;
-        height: 250px;
-        flex-shrink: 0; /* Ensures slides do not shrink */
-    }
-    
-    .slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block; 
-        margin: 0 auto;
-    }
-    .slide img:hover {
-        transform: scale(1.05);
-        transition: 0.5s ease;
-    }
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(400px * 3); /* Adjust width based on the number of slides */
+}
+
+.slide {
+    width: 400px;
+    height: 250px;
+    flex-shrink: 0; /* Ensures slides do not shrink */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; 
+}
+
+/* Auto Slide Effect */
+@keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-400px); }
+    66% { transform: translateX(-800px); }
+    100% { transform: translateX(0); }
+}
+
+.slider {
+    animation: slideAnimation 6s infinite;
+}
+
 
     header {
         background-color: #b6b6b667;
