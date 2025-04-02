@@ -164,11 +164,12 @@ body{
 
 .slider-container {
     position: relative;
-    width: 400px;
+    width: 100%; /* Make it responsive */
+    max-width: 400px; /* Set a maximum width */
     height: 250px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 20px auto; /* Center horizontally */
     display: flex;
     justify-content: center;
@@ -178,11 +179,11 @@ body{
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: calc(400px * 3); /* Adjust width based on the number of slides */
+    width: calc(100% * 3); /* Adjust based on the number of slides */
 }
 
 .slide {
-    width: 400px;
+    width: 100%; /* Ensure each slide takes up the full width of the container */
     height: 250px;
     flex-shrink: 0; /* Ensures slides do not shrink */
 }
@@ -191,21 +192,20 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block; 
+    display: block;
 }
 
 /* Auto Slide Effect */
 @keyframes slideAnimation {
     0% { transform: translateX(0); }
-    33% { transform: translateX(-400px); }
-    66% { transform: translateX(-800px); }
+    33% { transform: translateX(-100%); } /* Adjust to use percentage for responsiveness */
+    66% { transform: translateX(-200%); }
     100% { transform: translateX(0); }
 }
 
 .slider {
     animation: slideAnimation 6s infinite;
 }
-
 
     header {
         background-color: #b6b6b667;
