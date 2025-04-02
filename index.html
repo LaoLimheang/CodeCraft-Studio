@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/code/logo.jpg" type="image/x-icon">
+</head>
+<body>
+    
+    
+    <nav class="navbar" id="home">
+        <div class="logo">
+            <img src="/code/logo.jpg" alt="Logo" style="height: 40px; width: auto;">
+            CodeCraft Studio
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#">Templates</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="menu-icon">☰</div>
+    </nav>
+    
+
+<header>
+    <div class="slider-container" id="Template">
+        <div class="slider" id="slider">
+            <div class="slide"><img src="/code/1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/code/2.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="/code/technology-in-the-workplace.png" alt="Image 3"></div>
+        </div>
+    </div>
+    <h1>Professional & Creative Presentation Templates</h1>
+    <p>Elevate your presentations with our stunning templates designed for every occasion.</p>
+    <a href="#Featured" class="cta">Browse Templates</a>
+</header>
+
+
+
+<div id="notification">
+    <span >Note:Website is not yet allowed to edit slide.</span>
+    <button id="close-btn">✖</button>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let notification = document.getElementById("notification");
+        let closeBtn = document.getElementById("close-btn");
+        
+        setTimeout(() => {
+            notification.style.display = "block";
+        }, 2000);
+        
+        closeBtn.addEventListener("click", function() {
+            notification.style.display = "none";
+        });
+    });
+</script>
+
+
+
+<h1 style="text-align: center; margin-top: 10px;" id="Featured">Featured Templates</h1>
+
+<section class="templates">
+    <div class="template">
+        <img src="/p1.PNG" alt="Template 1">
+        <h3>Technology Presentation</h3>
+        <p>This template is designed for modern tech presentations, making your ideas stand out.</p>
+        <a href="https://www.canva.com/design/DAGhcAWUOds/UIXYq73rc2-BQiW6q4HNdg/view?utm_content=DAGhcAWUOds&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hac3fe5f563" id="preview" target="_blank" rel="noopener noreferrer">Preview</a>
+        <a href="#" id="edit">Edit</a>
+    </div>
+    <div class="template">
+        <img src="/p2.PNG" alt="Template 4">
+        <h3>Lift Of Thomas Edison</h3>
+        <p>Learn about the life and inventions of Thomas Edison, one of the greatest inventors in history.</p>
+        <a href="https://www.canva.com/design/DAGgpsrsifY/p8fUm4tJIe3MHDZFwCTQkA/view?utm_content=DAGgpsrsifY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h35ae08d8de" id="preview" target="_blank" rel="noopener noreferrer">Preview</a>
+        <a href="#" id="edit">Edit</a>
+    </div>
+    <div class="template">
+        <img src="/code/vesak.PNG" alt="Template 2">
+        <h3>Vesak Bochea presentation</h3>
+        <p>About Vesak Bochea Buddha: This template highlights the significance of Vesak Bochea, a sacred day commemorating the birth, enlightenment, and passing of Buddha.</p>
+        <a href="https://www.canva.com/design/DAGjR0Qu-rM/5pUyEYT-2r7bQhUT4pOWKg/view?utm_content=DAGjR0Qu-rM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h891ae1ad4f" id="preview">Preview</a>
+        <a href="#" id="edit">Edit</a>
+    </div>
+    <div class="template">
+        <img src="/code/logo.jpg" alt="Template 3">
+        <h3>soon</h3>
+        <p>function presentation</p>
+        <a href="#" id="preview" target="_blank" rel="noopener noreferrer">Preview</a>
+        <a href="#" id="edit">Edit</a>
+    </div>
+    
+</section>
+
+<div class="about" id="about">
+    <h1> <span style="color: rgb(0, 0, 0);"><i class="fas fa-bolt"></i></span> About Templates</h1>
+    <p>Slide Templates is a website that provides free templates for <span style="color: orange; text-decoration: underline;">Canva slide</span>. You can browse our templates and download them for free. We have a wide variety of templates that you can use for your presentations. Our templates are designed by professionals and are easy to use. You can customize the templates to suit your needs and create stunning presentations in no time. So why wait? Browse our templates now and create amazing presentations!</p>
+
+</div>
+<script>
+    let index = 0;
+    function changeSlide() {
+        index = (index + 1) % 3;
+        document.getElementById('slider').style.transform = `translateX(${-index * 400}px)`;
+    }
+    setInterval(changeSlide, 3000);
+</script>
+
+
+
+<form id="feedback-form">
+    <h2>Sent Message:</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+  
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+  
+    <button type="submit">Send message</button>
+  </form>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("7DBduPWltULBtnd92");
+    })();
+  
+    document.getElementById("feedback-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+  
+      emailjs.sendForm("service_wi7qq88", "template_kxgk0ul", this)
+        .then(() => {
+          alert("Feedback sent successfully!");
+          this.reset();
+        })
+        .catch((error) => {
+          console.error("Error sending feedback:", error);
+        });
+    });
+  </script>
+  
+
+
+
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-top">
+            <p>What your Mind? →</p>
+            <h2 style="color: white;">Contact <span>us</span></h2>
+            <div class="cta-button" ><a href="#home">→</a></div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-brand">
+                <p>CodeCraft Studio.®</p>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#Template">template</a></p>
+                <p><a href="#about">About</a></p>
+            </div>
+            <div class="footer-contact">
+                <div>
+                    <h4>SIEM REAP</h4>
+                    <a href="mailto:laolimheang1@gmail.com">laolimheang1@gmail.com</a>
+                    <p>+855 879 679 30 / +855 975 424 470</p>
+                    <p>Wat bo, sala komrerk, siem reap</p>
+                    <a href="#" class="map">SEE ON MAP →</a>
+                </div>
+                
+            </div>
+            <div class="footer-newsletter">
+                <h4>WANT TO BE THE SMARTEST IN YOUR OFFICE?</h4>
+                <a href="#">SIGN UP FOR OUR NEWSLETTER →</a>
+                <p>FOLLOW US</p>
+                <div class="social-icons" id="social-icons">
+                    <a href="https://www.facebook.com/share/1ALLHmWvsU/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                    <a href="https://t.me/CodeCraft_Studio_CCS" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.instagram.com/tric_h__?igsh=MTJueXU2a3Y1bnRvcw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@lao_limheang168?_t=ZS-8vBxesHP3ar&_r=1" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+
+
+    <footer>© 2025 CodeCraft Studio. All rights reserved.</footer>
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
